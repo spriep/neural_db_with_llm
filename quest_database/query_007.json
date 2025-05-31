@@ -1,0 +1,18 @@
+{
+    "unique_id": "query_007",
+    "database_id": "codebase_community",
+    "table_schema": [
+      "CREATE TABLE posts (Id INTEGER PRIMARY KEY NOT NULL UNIQUE, PostTypeId INTEGER, AcceptedAnswerId INTEGER, CreationDate DATETIME, Score INTEGER, ViewCount INTEGER, Body TEXT, OwnerUserId INTEGER, LastActivityDate DATETIME, Title TEXT, Tags TEXT, AnswerCount INTEGER, CommentCount INTEGER, FavoriteCount INTEGER, LastEditorUserId INTEGER, LastEditDate DATETIME, CommunityOwnedDate DATETIME, ParentId INTEGER, ClosedDate DATETIME, OwnerDisplayName TEXT, LastEditorDisplayName TEXT);",
+      "CREATE TABLE comments (Id INTEGER NOT NULL PRIMARY KEY, PostId INTEGER, Score INTEGER, Text TEXT, CreationDate DATETIME, UserId INTEGER, UserDisplayName TEXT);"
+    ],
+    "question": "Does it matter what you are interpolating during the multivariate interpolation?",
+    "expected_result": "yes",
+    "udf_justification": "Esta consulta requiere de common sense analysis.",
+    "udf_types": ["Common sense Analysis"],
+    "sql_hints": {
+      "requires_join": true,
+      "requires_group_by": false,
+      "multiple_udfs": false
+    }
+  }
+  

@@ -1,0 +1,15 @@
+{
+    "unique_id": "query_009",
+    "database_id": "StatsExchange_QA",
+    "table_schema": "CREATE TABLE Posts (post_id INTEGER, post_content TEXT)",
+    "question": "Which datasets or tools are mentioned in post ID 12 that are relevant for running statistical analysis in R?",
+    "expected_result": ["R", "datasets"],
+    "udf_justification": "The question requires extracting relevant entities (datasets, tools, or software) from a paragraph of text. SQL cannot identify or interpret named entities based on context; this requires semantic understanding.",
+    "udf_types": ["Entity Extraction"],
+    "sql_hints": {
+      "requires_join": false,
+      "requires_group_by": false,
+      "multiple_udfs": false
+    }
+  }
+  

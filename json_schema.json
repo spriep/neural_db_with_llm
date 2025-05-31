@@ -1,0 +1,15 @@
+{
+    "unique_id": "string",
+    "database_id": "string",
+    "table_schema": ["string", ...],
+    "question": "string",
+    "expected_result": "string or array",
+    "udf_justification": "string",
+    "udf_types": ["string", ...],
+    "sql_hints": {
+      "requires_join": true/false,
+      "requires_group_by": true/false,
+      "multiple_udfs": true/false
+    }
+  }
+  

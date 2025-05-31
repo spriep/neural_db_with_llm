@@ -1,0 +1,15 @@
+{
+    "unique_id": "query_004",
+    "database_id": "student_club",
+    "table_schema": "CREATE TABLE event (original_column_name TEXT, column_name TEXT, column_description TEXT, data_format TEXT, value_description TEXT);",
+    "question": "What does an officer do?",
+    "expected_result": "Member of a club voted by active members. Must attend monthly officers meetings (7 per year) and Officers and Budget Committee only.",
+    "udf_justification": "A summary is required from multiple texts about 'officer', something that SQL cannot perform without semantic understanding of the content.",
+    "udf_types": ["summarization"],
+    "sql_hints": {
+      "requires_join": true,
+      "requires_group_by": false,
+      "multiple_udfs": false
+    }
+  }
+  

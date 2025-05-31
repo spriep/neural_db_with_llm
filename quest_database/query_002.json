@@ -1,0 +1,15 @@
+{
+    "unique_id": "query_002",
+    "database_id": "card_games",
+    "table_schema": "CREATE TABLE rulings (id INTEGER, date TEXT, text TEXT, uuid TEXT);",
+    "question": "What is the mana?",
+    "expected_result": "The type of mana is its color, or lack thereof (if the mana is colorless), it is stored in a mana pool, creatures have mana costs of mana abilities, you can activate an ability using that mana. You gain mana by tapping lands.",
+    "udf_justification": "A summary is required from multiple texts about 'mana', something that SQL cannot perform without semantic understanding of the content.",
+    "udf_types": ["summarization"],
+    "sql_hints": {
+      "requires_join": false,
+      "requires_group_by": false,
+      "multiple_udfs": false
+    }
+  }
+  

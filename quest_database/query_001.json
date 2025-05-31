@@ -1,0 +1,15 @@
+{
+    "unique_id": "query_001",
+    "database_id": "card_games",
+    "table_schema": "CREATE TABLE rulings (id INTEGER, date TEXT, text TEXT, uuid TEXT);",
+    "question": "How does the “Hail of Arrows” card work?",
+    "expected_result": "You choose how the damage will be divided among the target creatures at the time you cast Hail of Arrows. Each target must be dealt at least 1 damage. If any of those creatures becomes an illegal target before Hail of Arrows resolves, the division of damage",
+    "udf_justification": "A summary is required from multiple texts about 'Beacon of Immortality', something that SQL cannot perform without semantic understanding of the content.",
+    "udf_types": ["summarization"],
+    "sql_hints": {
+      "requires_join": false,
+      "requires_group_by": false,
+      "multiple_udfs": false
+    }
+  }
+  

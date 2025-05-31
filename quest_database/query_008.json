@@ -1,0 +1,18 @@
+{
+    "unique_id": "query_008",
+    "database_id": "codebase_community",
+    "table_schema": [
+      "CREATE TABLE posts (Id INTEGER PRIMARY KEY NOT NULL UNIQUE, PostTypeId INTEGER, AcceptedAnswerId INTEGER, CreationDate DATETIME, Score INTEGER, ViewCount INTEGER, Body TEXT, OwnerUserId INTEGER, LastActivityDate DATETIME, Title TEXT, Tags TEXT, AnswerCount INTEGER, CommentCount INTEGER, FavoriteCount INTEGER, LastEditorUserId INTEGER, LastEditDate DATETIME, CommunityOwnedDate DATETIME, ParentId INTEGER, ClosedDate DATETIME, OwnerDisplayName TEXT, LastEditorDisplayName TEXT);",
+      "CREATE TABLE comments (Id INTEGER NOT NULL PRIMARY KEY, PostId INTEGER, Score INTEGER, Text TEXT, CreationDate DATETIME, UserId INTEGER, UserDisplayName TEXT);"
+    ],
+    "question": "What do you must have before adding a model of noise?",
+    "expected_result": "a class of functions to interpolate",
+    "udf_justification": "Esta consulta requiere de Temporal Reasoning Analysis.",
+    "udf_types": ["Temporal Reasoning Analysis"],
+    "sql_hints": {
+      "requires_join": true,
+      "requires_group_by": false,
+      "multiple_udfs": false
+    }
+  }
+  

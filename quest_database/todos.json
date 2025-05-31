@@ -1,0 +1,155 @@
+[
+    {
+      "unique_id": "summarization_001",
+      "database_id": "card_games",
+      "table_schema": "CREATE TABLE rulings (id INTEGER, date TEXT, text TEXT, uuid TEXT);",
+      "question": "How does the “Hail of Arrows” card work?",
+      "expected_result": "You choose how the damage will be divided among the target creatures at the time you cast Hail of Arrows. Each target must be dealt at least 1 damage. If any of those creatures becomes an illegal target before Hail of Arrows resolves, the division of damage is adjusted accordingly.",
+      "udf_justification": "A summary is required from multiple texts about 'Hail of Arrows', something that SQL cannot perform without semantic understanding of the content.",
+      "udf_types": ["summarization"],
+      "sql_hints": {
+        "requires_join": false,
+        "requires_group_by": false,
+        "multiple_udfs": false
+      }
+    },
+    {
+      "unique_id": "summarization_002",
+      "database_id": "card_games",
+      "table_schema": "CREATE TABLE rulings (id INTEGER, date TEXT, text TEXT, uuid TEXT);",
+      "question": "What is the mana?",
+      "expected_result": "The type of mana is its color, or lack thereof (if the mana is colorless), it is stored in a mana pool. Creatures have mana costs or mana abilities, and you can activate an ability using that mana. You gain mana by tapping lands.",
+      "udf_justification": "A summary is required from multiple texts about 'mana', something that SQL cannot perform without semantic understanding of the content.",
+      "udf_types": ["summarization"],
+      "sql_hints": {
+        "requires_join": false,
+        "requires_group_by": false,
+        "multiple_udfs": false
+      }
+    },
+    {
+      "unique_id": "summarization_003",
+      "database_id": "card_games",
+      "table_schema": "CREATE TABLE rulings (id INTEGER, date TEXT, text TEXT, uuid TEXT);",
+      "question": "What is a clone?",
+      "expected_result": "Clone is not a token. A clone copies exactly what was printed on the original creature and nothing more (unless that creature is copying something else or is a token; see below). It doesn’t copy whether that creature is tapped or untapped, whether it has any counters on it or auras. You may choose only a creature that’s already on the battlefield for a clone to copy. You can choose not to copy anything. In that case, Clone enters the battlefield as a 0/0 Shapeshifter creature, and is probably put into the graveyard immediately. You can choose to copy another clone.",
+      "udf_justification": "A summary is required from multiple texts about 'clone', something that SQL cannot perform without semantic understanding of the content.",
+      "udf_types": ["summarization"],
+      "sql_hints": {
+        "requires_join": false,
+        "requires_group_by": false,
+        "multiple_udfs": false
+      }
+    },
+    {
+      "unique_id": "summarization_004",
+      "database_id": "student_club",
+      "table_schema": "CREATE TABLE event (original_column_name TEXT, column_name TEXT, column_description TEXT, data_format TEXT, value_description TEXT);",
+      "question": "What does an officer do?",
+      "expected_result": "Member of a club voted by active members. Must attend monthly officers meetings (7 per year) and Officers and Budget Committee only.",
+      "udf_justification": "A summary is required from multiple texts about 'officer', something that SQL cannot perform without semantic understanding of the content.",
+      "udf_types": ["summarization"],
+      "sql_hints": {
+        "requires_join": false,
+        "requires_group_by": false,
+        "multiple_udfs": false
+      }
+    },
+    {
+      "unique_id": "query_005",
+      "database_id": "codebase_community",
+      "table_schema": [
+        "CREATE TABLE posts (Id INTEGER PRIMARY KEY NOT NULL UNIQUE, PostTypeId INTEGER, AcceptedAnswerId INTEGER, CreationDate DATETIME, Score INTEGER, ViewCount INTEGER, Body TEXT, OwnerUserId INTEGER, LastActivityDate DATETIME, Title TEXT, Tags TEXT, AnswerCount INTEGER, CommentCount INTEGER, FavoriteCount INTEGER, LastEditorUserId INTEGER, LastEditDate DATETIME, CommunityOwnedDate DATETIME, ParentId INTEGER, ClosedDate DATETIME, OwnerDisplayName TEXT, LastEditorDisplayName TEXT);",
+        "CREATE TABLE comments (Id INTEGER NOT NULL PRIMARY KEY, PostId INTEGER, Score INTEGER, Text TEXT, CreationDate DATETIME, UserId INTEGER, UserDisplayName TEXT);"
+      ],
+      "question": "What key entities are mentioned in the questions on Likert scales and in the answers, how would the topic covered be classified?",
+      "expected_result": "entities[DATA TYPE: ordinal or interval data, SCALE: Likert scales, FIELD OF STUDY: social sciences, PSYCHOLOGY, items: Likert-type, data points, PERSON: psychometricians, researcher, Methods: permutation, bootstrapped test, test of normality, central limit theorem, measurement triangulation], classification[social sciences, mathematics]",
+      "udf_justification": "Esta consulta requiere extraer entidades clave para identificar elementos importantes, clasificar el contenido temáticamente y entender la dimensión temporal de los eventos mencionados, proporcionando una respuesta enriquecida y contextualizada.",
+      "udf_types": ["Entity Extraction", "Text Classification", "Temporal Reasoning"],
+      "sql_hints": {
+        "requires_join": true,
+        "requires_group_by": false,
+        "multiple_udfs": true
+      }
+    },
+    {
+      "unique_id": "query_006",
+      "database_id": "codebase_community",
+      "table_schema": [
+        "CREATE TABLE posts (Id INTEGER PRIMARY KEY NOT NULL UNIQUE, PostTypeId INTEGER, AcceptedAnswerId INTEGER, CreationDate DATETIME, Score INTEGER, ViewCount INTEGER, Body TEXT, OwnerUserId INTEGER, LastActivityDate DATETIME, Title TEXT, Tags TEXT, AnswerCount INTEGER, CommentCount INTEGER, FavoriteCount INTEGER, LastEditorUserId INTEGER, LastEditDate DATETIME, CommunityOwnedDate DATETIME, ParentId INTEGER, ClosedDate DATETIME, OwnerDisplayName TEXT, LastEditorDisplayName TEXT);",
+        "CREATE TABLE comments (Id INTEGER NOT NULL PRIMARY KEY, PostId INTEGER, Score INTEGER, Text TEXT, CreationDate DATETIME, UserId INTEGER, UserDisplayName TEXT);"
+      ],
+      "question": "Is the opinion on Likert scales doubtful?",
+      "expected_result": "yes",
+      "udf_justification": "Esta consulta requiere de sentiment analysis.",
+      "udf_types": ["Sentiment Analysis"],
+      "sql_hints": {
+        "requires_join": true,
+        "requires_group_by": false,
+        "multiple_udfs": false
+      }
+    },
+    {
+      "unique_id": "query_007",
+      "database_id": "codebase_community",
+      "table_schema": [
+        "CREATE TABLE posts (Id INTEGER PRIMARY KEY NOT NULL UNIQUE, PostTypeId INTEGER, AcceptedAnswerId INTEGER, CreationDate DATETIME, Score INTEGER, ViewCount INTEGER, Body TEXT, OwnerUserId INTEGER, LastActivityDate DATETIME, Title TEXT, Tags TEXT, AnswerCount INTEGER, CommentCount INTEGER, FavoriteCount INTEGER, LastEditorUserId INTEGER, LastEditDate DATETIME, CommunityOwnedDate DATETIME, ParentId INTEGER, ClosedDate DATETIME, OwnerDisplayName TEXT, LastEditorDisplayName TEXT);",
+        "CREATE TABLE comments (Id INTEGER NOT NULL PRIMARY KEY, PostId INTEGER, Score INTEGER, Text TEXT, CreationDate DATETIME, UserId INTEGER, UserDisplayName TEXT);"
+      ],
+      "question": "Does it matter what you are interpolating during the multivariate interpolation?",
+      "expected_result": "yes",
+      "udf_justification": "Esta consulta requiere de common sense analysis.",
+      "udf_types": ["Common sense Analysis"],
+      "sql_hints": {
+        "requires_join": true,
+        "requires_group_by": false,
+        "multiple_udfs": false
+      }
+    },
+    {
+      "unique_id": "query_008",
+      "database_id": "codebase_community",
+      "table_schema": [
+        "CREATE TABLE posts (Id INTEGER PRIMARY KEY NOT NULL UNIQUE, PostTypeId INTEGER, AcceptedAnswerId INTEGER, CreationDate DATETIME, Score INTEGER, ViewCount INTEGER, Body TEXT, OwnerUserId INTEGER, LastActivityDate DATETIME, Title TEXT, Tags TEXT, AnswerCount INTEGER, CommentCount INTEGER, FavoriteCount INTEGER, LastEditorUserId INTEGER, LastEditDate DATETIME, CommunityOwnedDate DATETIME, ParentId INTEGER, ClosedDate DATETIME, OwnerDisplayName TEXT, LastEditorDisplayName TEXT);",
+        "CREATE TABLE comments (Id INTEGER NOT NULL PRIMARY KEY, PostId INTEGER, Score INTEGER, Text TEXT, CreationDate DATETIME, UserId INTEGER, UserDisplayName TEXT);"
+      ],
+      "question": "What do you must have before adding a model of noise?",
+      "expected_result": "a class of functions to interpolate",
+      "udf_justification": "Esta consulta requiere de Temporal Reasoning Analysis.",
+      "udf_types": ["Temporal Reasoning Analysis"],
+      "sql_hints": {
+        "requires_join": true,
+        "requires_group_by": false,
+        "multiple_udfs": false
+      }
+    },
+    {
+      "unique_id": "query_009",
+      "database_id": "StatsExchange_QA",
+      "table_schema": "CREATE TABLE Posts (post_id INTEGER, post_content TEXT)",
+      "question": "Which datasets or tools are mentioned in post ID 12 that are relevant for running statistical analysis in R?",
+      "expected_result": ["R", "datasets"],
+      "udf_justification": "The question requires extracting relevant entities (datasets, tools, or software) from a paragraph of text. SQL cannot identify or interpret named entities based on context; this requires semantic understanding.",
+      "udf_types": ["Entity Extraction"],
+      "sql_hints": {
+        "requires_join": false,
+        "requires_group_by": false,
+        "multiple_udfs": false
+      }
+    },
+    {
+      "unique_id": "query_010",
+      "database_id": "StatsExchange_QA",
+      "table_schema": "CREATE TABLE Posts (post_id INTEGER, post_content TEXT)",
+      "question": "What is the overall sentiment expressed in post ID 13 about traditional statistical methods?",
+      "expected_result": "Critical, but reflective",
+      "udf_justification": "Determining the sentiment of a post about traditional statistical methods requires interpreting the author’s tone and attitude, which is beyond SQL's capabilities. This task involves natural language understanding and nuance.",
+      "udf_types": ["Sentiment Analysis"],
+      "sql_hints": {
+        "requires_join": false,
+        "requires_group_by": false,
+        "multiple_udfs": false
+      }
+    }
+  ]
+  

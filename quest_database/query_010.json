@@ -1,0 +1,15 @@
+{
+    "unique_id": "query_010",
+    "database_id": "StatsExchange_QA",
+    "table_schema": "CREATE TABLE Posts (post_id INTEGER, post_content TEXT)",
+    "question": "What is the overall sentiment expressed in post ID 13 about traditional statistical methods?",
+    "expected_result": "Critical, but reflective",
+    "udf_justification": "Determining the sentiment of a post about traditional statistical methods requires interpreting the author’s tone and attitude, which is beyond SQL's capabilities. This task involves natural language understanding and nuance.",
+    "udf_types": ["Sentiment Analysis"],
+    "sql_hints": {
+      "requires_join": false,
+      "requires_group_by": false,
+      "multiple_udfs": false
+    }
+  }
+  

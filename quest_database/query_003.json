@@ -1,0 +1,15 @@
+{
+    "unique_id": "query_003",
+    "database_id": "card_games",
+    "table_schema": "CREATE TABLE rulings (id INTEGER, date TEXT, text TEXT, uuid TEXT);",
+    "question": "What is a clone?",
+    "expected_result": "Clone is not a token. A clone copies exactly what was printed on the original creature and nothing more (unless that creature is copying something else or is a token; see below). It doesn’t copy whether that creature is tapped or untapped, whether it has any counters on it or auras. You may choose only a creature that’s already on the battlefield for a clone to copy. You can choose not to copy anything. In that case, Clone enters the battlefield as a 0/0 Shapeshifter creature, and is probably put into the graveyard immediately. You can choose to copy another clone.",
+    "udf_justification": "A summary is required from multiple texts about 'clone', something that SQL cannot perform without semantic understanding of the content.",
+    "udf_types": ["summarization"],
+    "sql_hints": {
+      "requires_join": false,
+      "requires_group_by": false,
+      "multiple_udfs": false
+    }
+  }
+  
